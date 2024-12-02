@@ -1,0 +1,203 @@
+/* Barra de navegación en la parte superior */
+.sidebar {
+    width: 100%;
+    height: auto;
+    background-color: #282c34; /* Color más oscuro y moderno */
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidad */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    display: flex; /* Flexbox para mejor alineación */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.sidebar .logo-details {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.sidebar .nav-links {
+    list-style: none;
+    display: flex; /* Cambiado a flex para alinear horizontalmente */
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .nav-links li {
+    padding: 0 20px;
+}
+
+.sidebar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500; /* Más peso para destacar el texto */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+.sidebar .nav-links a:hover {
+    background-color: #444; /* Color de fondo en hover */
+    border-radius: 5px;
+    color: #f0f0f0; /* Color de texto en hover */
+}
+
+/* Botón de Salir alineado a la derecha */
+.sidebar .logout {
+    padding: 0 20px; /* Espaciado lateral */
+}
+
+/* Ajuste del margen superior del contenido principal */
+.contenido_principal {
+    margin-top: 70px; /* Ajuste según el alto de la barra de navegación */
+    padding: 20px;
+}
+
+/* Contenedor de búsqueda en línea */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    gap: 10px;
+}
+
+/* Barra de búsqueda */
+.search-box {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px; /* Espaciado mayor para mayor comodidad */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem; /* Tamaño de fuente más grande */
+    transition: border-color 0.3s; /* Transición suave en el borde */
+}
+
+.search-box:focus {
+    border-color: #007bff; /* Color de borde al enfocar */
+    outline: none; /* Sin contorno predeterminado */
+}
+
+/* Botones de búsqueda en línea */
+.search-container button {
+    background-color: #007bff; /* Color primario */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem; /* Tamaño de fuente más grande */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.search-container button:hover {
+    background-color: #0056b3; /* Color en hover */
+}
+
+/* Contenedor de resultados en una columna */
+/* Contenedor de resultados en una columna */
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente las tarjetas */
+    justify-content: center; /* Centra verticalmente en caso de que haya espacio */
+    width: 100%;
+    max-width: 800px; /* Cambiado para que se ajuste mejor a un ancho centrado */
+    gap: 15px;
+    margin: 20px auto; /* Centra el contenedor en la página */
+    padding: 20px; /* Espaciado interior para evitar que el contenido toque los bordes */
+}
+
+/* Tarjetas de libros */
+.result-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px; /* Espaciado mayor */
+    width: 100%; /* Esto permite que la tarjeta ocupe el ancho completo de su contenedor */
+    max-width: 300px; /* Limitar el ancho de las tarjetas para centrarlas mejor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
+    text-align: center; /* Centra el texto dentro de las tarjetas */
+    margin: 0 auto; /* Asegura que cada tarjeta esté centrada dentro de su contenedor */
+}
+
+.result-item:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.result-item h3 {
+    font-size: 1.5rem; /* Tamaño de fuente más grande para títulos */
+    color: #333;
+    margin: 0 0 5px;
+}
+
+.result-item p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 0 10px;
+}
+
+.result-item button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.result-item button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal para vista previa de PDF */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Más oscuro para mayor contraste */
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para mayor profundidad */
+}
+
+.pdf-frame {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
